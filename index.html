@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siddhanta | Established Principles. Powerful Impact.</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
-        
-        :root {
-            --color-navy: #0A192F;
-            --color-teal: #00F2FE;
-            --color-gold: #F5A623;
-            --color-dark-blue: #003D82;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
         * {
             margin: 0;
@@ -22,19 +15,267 @@
             box-sizing: border-box;
         }
 
-        html { 
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0A192F 0%, #0D2A4D 100%);
-            min-height: 100vh;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* ============================================
-           ANIMATIONS
+           BACKGROUND & HERO
            ============================================ */
+
+        .hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            z-index: -2;
+        }
+
+        .logo-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+            background: url('data:image/svg+xml,<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><path d="M 20 40 L 30 15 L 30 95 L 20 70 Z" fill="%23003D82"/><path d="M 30 15 L 50 5 L 50 85 L 30 95 Z" fill="%230A4FA6"/><path d="M 50 5 L 70 25 L 70 75 L 50 85 Z" fill="%2300D4AA"/><path d="M 70 25 L 80 40 L 80 70 L 70 75 Z" fill="%23F5A623"/><path d="M 30 50 L 70 50 L 70 60 L 30 60 Z" fill="%23FFD700"/><path d="M 40 45 L 60 40 L 60 65 L 40 60 Z" fill="none" stroke="%2300F2FE" stroke-width="1.5" opacity="0.8"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(40px);
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, #003D82, #00D4AA, #F5A623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #4a4a4a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: linear-gradient(90deg, #003D82, #F5A623);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #003D82;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-outline {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid #003D82;
+            color: #003D82;
+            background: transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #003D82;
+            color: white;
+        }
+
+        .btn-primary {
+            padding: 0.7rem 1.8rem;
+            background: linear-gradient(135deg, #003D82, #005FA3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 61, 130, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-buttons {
+                gap: 0.5rem;
+            }
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #E3F2FD;
+            color: #003D82;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #003D82, #00D4AA, #F5A623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary-lg {
+            background: linear-gradient(135deg, #003D82, #005FA3);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary-lg:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 61, 130, 0.4);
+        }
+
+        .btn-secondary-lg {
+            border: 2px solid #003D82;
+            color: #003D82;
+            background: white;
+        }
+
+        .btn-secondary-lg:hover {
+            background: #003D82;
+            color: white;
+        }
 
         @keyframes fadeInUp {
             from {
@@ -47,488 +288,624 @@
             }
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        /* ============================================
+           SECTIONS
+           ============================================ */
+
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 2;
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+        .section-label {
+            font-size: 0.9rem;
+            color: #003D82;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
 
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(0, 242, 254, 0.8);
-            }
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
         }
 
-        @keyframes pulse-ring {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(0, 242, 254, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
-            }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        @keyframes rotate-3d {
-            from {
-                transform: rotateX(0deg) rotateY(0deg);
-            }
-            to {
-                transform: rotateX(5deg) rotateY(5deg);
-            }
+        /* ============================================
+           OFFERINGS SECTION
+           ============================================ */
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        @keyframes shimmer {
-            0% {
-                background-position: -1000px 0;
-            }
-            100% {
-                background-position: 1000px 0;
-            }
+        .offering-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Logo Animations */
-        @keyframes logo-rotate {
-            from {
-                transform: rotateZ(0deg);
-            }
-            to {
-                transform: rotateZ(360deg);
-            }
+        .offering-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623);
         }
 
-        @keyframes logo-float {
-            0%, 100% {
-                transform: translateY(0px) rotateZ(0deg);
-            }
-            50% {
-                transform: translateY(-15px) rotateZ(5deg);
-            }
-        }
-
-        /* Utility Classes */
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .animate-slideInLeft {
-            animation: slideInLeft 0.8s ease-out;
-        }
-
-        .animate-slideInRight {
-            animation: slideInRight 0.8s ease-out;
-        }
-
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-glow {
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        .animate-pulse-ring {
-            animation: pulse-ring 2s infinite;
-        }
-
-        .animate-rotate-3d {
-            animation: rotate-3d 6s ease-in-out infinite;
-        }
-
-        .animate-logo-float {
-            animation: logo-float 4s ease-in-out infinite;
-        }
-
-        .animate-logo-rotate {
-            animation: logo-rotate 20s linear infinite;
-        }
-
-        /* Delay utilities */
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-
-        /* Stagger for list items */
-        .stagger > * {
-            animation: fadeInUp 0.8s ease-out backwards;
-        }
-        .stagger > *:nth-child(1) { animation-delay: 0.1s; }
-        .stagger > *:nth-child(2) { animation-delay: 0.2s; }
-        .stagger > *:nth-child(3) { animation-delay: 0.3s; }
-        .stagger > *:nth-child(4) { animation-delay: 0.4s; }
-        .stagger > *:nth-child(5) { animation-delay: 0.5s; }
-        .stagger > *:nth-child(6) { animation-delay: 0.6s; }
-
-        /* Card Hover Effects */
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .card-hover:hover {
+        .offering-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 61, 130, 0.15);
         }
 
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(135deg, #00F2FE, #00D4AA, #F5A623);
+        .offering-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #E3F2FD, #C8E6F5);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #003D82;
+        }
+
+        .offering-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .offering-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ============================================
+           INDUSTRIES SECTION
+           ============================================ */
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .industry-tag {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: #555;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .industry-tag:hover {
+            border-color: #003D82;
+            color: #003D82;
+            background: #E3F2FD;
+            transform: translateY(-5px);
+        }
+
+        /* ============================================
+           EXPERTISE SECTION
+           ============================================ */
+
+        .expertise-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .expertise-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .expertise-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .expertise-list {
+            list-style: none;
+        }
+
+        .expertise-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-left: 0;
+            align-items: flex-start;
+        }
+
+        .expertise-list li::before {
+            content: '✓';
+            color: #F5A623;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .expertise-list li span {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .expertise-image {
+            background: linear-gradient(135deg, #E3F2FD, #C8E6F5);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .expertise-image svg {
+            width: 200px;
+            height: 200px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 968px) {
+            .expertise-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ============================================
+           PILLARS SECTION
+           ============================================ */
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            border: 1px solid rgba(0, 61, 130, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 61, 130, 0.15);
+            border-color: #003D82;
+        }
+
+        .pillar-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #003D82, #F5A623);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: shimmer 3s infinite;
+            margin-bottom: 0.5rem;
         }
 
-        /* Button Animations */
-        .btn-primary {
-            position: relative;
-            overflow: hidden;
+        .pillar-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .pillar-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+
+        .contact-container {
+            background: linear-gradient(135deg, #003D82, #005FA3);
+            color: white;
+            border-radius: 20px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-container h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-container p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-contact {
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
             transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid white;
         }
 
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
+        .btn-contact.primary {
+            background: white;
+            color: #003D82;
+        }
+
+        .btn-contact.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-contact.secondary {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-contact.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
-        .btn-primary:hover::before {
-            width: 300px;
-            height: 300px;
+        .contact-details h4 {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
         }
 
-        /* Section Animations */
-        .section-fade {
-            animation: fadeInUp 1s ease-out;
+        .contact-details p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
-        /* Scroll reveal */
-        .reveal {
+        @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-large {
+                width: 100%;
+            }
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+           ============================================ */
+
+        .fade-in {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
         }
 
-        .reveal.active {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Navbar animations */
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00F2FE;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.5);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00F2FE;
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #F5A623;
-        }
     </style>
 </head>
-<body class="bg-[#0A192F] text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-navy">
+<body>
+    <!-- Background Watermark -->
+    <div class="hero-bg"></div>
+    <div class="logo-watermark"></div>
 
-    <!-- Header / Navigation -->
-    <header class="border-b border-slate-800 backdrop-blur-md sticky top-0 z-50 bg-[#0A192F]/90">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3 animate-slideInLeft">
-                <!-- Enhanced 3D Logo SVG -->
-                <div class="w-12 h-12 animate-logo-float" style="perspective: 1000px;">
-                    <svg viewBox="0 0 100 120" class="w-full h-full" style="filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));">
-                        <!-- Left Blue Prism -->
-                        <path d="M 20 40 L 30 15 L 30 95 L 20 70 Z" fill="#003D82" stroke="#00F2FE" stroke-width="1"/>
-                        <!-- Center Dark Blue Prism -->
-                        <path d="M 30 15 L 50 5 L 50 85 L 30 95 Z" fill="#0A4FA6" stroke="#003D82" stroke-width="1"/>
-                        <!-- Right Teal Prism -->
-                        <path d="M 50 5 L 70 25 L 70 75 L 50 85 Z" fill="#00D4AA" stroke="#00F2FE" stroke-width="1"/>
-                        <!-- Right Gold Prism -->
-                        <path d="M 70 25 L 80 40 L 80 70 L 70 75 Z" fill="#F5A623" stroke="#FFD700" stroke-width="1"/>
-                        <!-- Center Connection Gold -->
-                        <path d="M 30 50 L 70 50 L 70 60 L 30 60 Z" fill="#FFD700" stroke="#F5A623" stroke-width="0.5"/>
-                        <!-- Inner Geometric Shape -->
-                        <path d="M 40 45 L 60 40 L 60 65 L 40 60 Z" fill="none" stroke="#00F2FE" stroke-width="1.5" opacity="0.8"/>
-                    </svg>
-                </div>
-                <span class="text-2xl font-black tracking-wider text-white uppercase animate-fadeInUp delay-200">Siddhanta</span>
+    <!-- Navigation -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                S <span>IDDHANTA</span>
             </div>
-
-            <nav class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide items-center">
-                <a href="#offerings" class="nav-link hover:text-[#00F2FE] transition">Offerings</a>
-                <a href="#industries" class="nav-link hover:text-[#00F2FE] transition">Industries</a>
-                <a href="#expertise" class="nav-link hover:text-[#00F2FE] transition">Expertise</a>
-                <a href="#pillars" class="nav-link hover:text-[#00F2FE] transition">4-S Pillars</a>
+            <nav class="nav-links">
+                <a href="#offerings">Products</a>
+                <a href="#industries">Industries</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#pillars">Principles</a>
             </nav>
-
-            <div class="hidden md:flex space-x-4 animate-slideInRight">
-                <a href="#contact" class="text-sm border border-[#00F2FE] text-[#00F2FE] px-5 py-2 rounded-full font-bold hover:bg-[#00F2FE]/10 transition btn-primary">Sample</a>
-                <a href="#contact" class="text-sm bg-gradient-to-r from-[#00F2FE] to-amber-400 text-[#0A192F] px-5 py-2 rounded-full font-bold hover:opacity-90 transition btn-primary">Consult</a>
+            <div class="nav-buttons">
+                <a href="#contact" class="btn-outline">Sample</a>
+                <a href="#contact" class="btn-primary">Consult</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative py-24 md:py-32 overflow-hidden border-b border-slate-800">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,242,254,0.08),transparent_45%)] animate-pulse"></div>
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <span class="inline-block text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 px-4 py-1.5 rounded-full mb-6 border border-amber-400/20 animate-fadeInUp">
-                Advanced Industrial & Commercial Formulations
-            </span>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight animate-fadeInUp delay-100">
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Advanced Industrial Solutions</div>
+            <h1>
                 Established Principles.<br>
-                <span class="gradient-text">Powerful Impact.</span>
+                <span class="gradient">Powerful Impact.</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed animate-fadeInUp delay-200">
-                Engineered solutions for industrial cleaning, eco-housekeeping, and water treatment. We deliver uncompromised cutting power without the toxic footprint.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fadeInUp delay-300">
-                <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-[#00F2FE] to-amber-400 text-[#0A192F] px-8 py-4 rounded-xl font-black tracking-wide shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 transition text-center btn-primary">
-                    Request a Product Sample
-                </a>
-                <a href="#contact" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-8 py-4 rounded-xl font-bold tracking-wide transition text-center btn-primary">
-                    Schedule a Consultation
-                </a>
-            </div>
-        </div>
-        
-        <!-- Floating Elements -->
-        <div class="absolute top-20 right-10 w-20 h-20 bg-[#00F2FE]/10 rounded-lg blur-xl animate-float"></div>
-        <div class="absolute bottom-20 left-10 w-32 h-32 bg-amber-400/5 rounded-full blur-2xl animate-float delay-200"></div>
-    </section>
-
-    <!-- Core Offerings Section -->
-    <section id="offerings" class="py-24 max-w-7xl mx-auto px-6 section-fade">
-        <div class="text-center mb-16">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-[#00F2FE] mb-3 animate-fadeInUp">Our Formulations</h2>
-            <p class="text-3xl md:text-4xl font-black text-white tracking-tight animate-fadeInUp delay-100">Core Product Offerings</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8 stagger">
-            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl card-hover group overflow-hidden reveal">
-                <div class="absolute inset-0 bg-gradient-to-br from-[#00F2FE]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                <div class="w-12 h-12 bg-[#00F2FE]/10 rounded-lg flex items-center justify-center mb-6 border border-[#00F2FE]/20 group-hover:animate-pulse relative z-10">
-                    <span class="text-[#00F2FE] text-2xl font-black">1</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Industrial Heavy-Duty Cleaners</h3>
-                <p class="text-slate-400 leading-relaxed relative z-10">Scientifically formulated to strip heavy grease, carbon, and industrial grime from machinery and factory floors without degrading expensive equipment.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl card-hover group overflow-hidden reveal">
-                <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:animate-pulse relative z-10">
-                    <span class="text-emerald-400 text-2xl font-black">2</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Specialized Bio-Degreasers</h3>
-                <p class="text-slate-400 leading-relaxed relative z-10">Next-generation solvent replacements that use advanced biological action to break down tough hydrocarbons safely and sustainably.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl card-hover group overflow-hidden reveal">
-                <div class="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                <div class="w-12 h-12 bg-amber-400/10 rounded-lg flex items-center justify-center mb-6 border border-amber-400/20 group-hover:animate-pulse relative z-10">
-                    <span class="text-amber-400 text-2xl font-black">3</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Eco-Friendly Housekeeping Chemicals</h3>
-                <p class="text-slate-400 leading-relaxed relative z-10">Premium, non-toxic cleaning agents designed for commercial spaces and direct retail consumers, ensuring absolute safety for end-users and surfaces.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl card-hover group overflow-hidden reveal">
-                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 border border-blue-500/20 group-hover:animate-pulse relative z-10">
-                    <span class="text-blue-400 text-2xl font-black">4</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Water Treatment Solutions</h3>
-                <p class="text-slate-400 leading-relaxed relative z-10">Technical chemical programs and system management protocols to optimize industrial water systems, prevent scale, and ensure strict environmental compliance.</p>
+            <p>Engineered solutions for industrial cleaning, eco-housekeeping, and water treatment with uncompromised cutting power without toxic footprints.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-large btn-primary-lg">Request a Product Sample</a>
+                <a href="#contact" class="btn-large btn-secondary-lg">Schedule a Consultation</a>
             </div>
         </div>
     </section>
 
-    <!-- Target Industries Section -->
-    <section id="industries" class="py-20 bg-slate-950/50 border-y border-slate-800 section-fade">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-8 animate-fadeInUp">Trusted By Leaders Across</h2>
-            <div class="flex flex-wrap justify-center gap-4 stagger">
-                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide hover:border-[#00F2FE] hover:text-[#00F2FE] transition card-hover reveal">Manufacturing Plants</span>
-                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide hover:border-[#00F2FE] hover:text-[#00F2FE] transition card-hover reveal">Automobile Workshops</span>
-                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide hover:border-[#00F2FE] hover:text-[#00F2FE] transition card-hover reveal">Corporate Offices</span>
-                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide hover:border-[#00F2FE] hover:text-[#00F2FE] transition card-hover reveal">Premium Hotels</span>
-                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide hover:border-[#00F2FE] hover:text-[#00F2FE] transition card-hover reveal">Hospitals & Healthcare</span>
-                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide hover:border-[#00F2FE] hover:text-[#00F2FE] transition card-hover reveal">Direct Retail Consumers</span>
+    <!-- Core Offerings -->
+    <section id="offerings">
+        <div class="section-header">
+            <div class="section-label">What We Offer</div>
+            <h2 class="section-title">Core Product Solutions</h2>
+            <p class="section-subtitle">Premium formulations engineered for industrial excellence</p>
+        </div>
+
+        <div class="offerings-grid">
+            <div class="offering-card fade-in">
+                <div class="offering-icon">🏭</div>
+                <h3>Heavy-Duty Cleaners</h3>
+                <p>Scientifically formulated to strip heavy grease, carbon, and industrial grime from machinery without degrading equipment.</p>
+            </div>
+
+            <div class="offering-card fade-in">
+                <div class="offering-icon">🌿</div>
+                <h3>Bio-Degreasers</h3>
+                <p>Next-generation solvent replacements using advanced biological action to break down tough hydrocarbons safely.</p>
+            </div>
+
+            <div class="offering-card fade-in">
+                <div class="offering-icon">✨</div>
+                <h3>Eco-Housekeeping</h3>
+                <p>Premium, non-toxic cleaning agents for commercial spaces and retail consumers ensuring absolute safety.</p>
+            </div>
+
+            <div class="offering-card fade-in">
+                <div class="offering-icon">💧</div>
+                <h3>Water Treatment</h3>
+                <p>Technical chemical programs for industrial water systems optimization and strict environmental compliance.</p>
             </div>
         </div>
     </section>
 
-    <!-- Founder's Expertise Section -->
-    <section id="expertise" class="py-24 max-w-7xl mx-auto px-6 border-b border-slate-800 section-fade">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="animate-slideInLeft">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-[#00F2FE] mb-3 animate-fadeInUp">The Edge</h2>
-                <h3 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-6 animate-fadeInUp delay-100">Technical Expertise. Proven Performance.</h3>
-                <p class="text-slate-400 mb-6 leading-relaxed animate-fadeInUp delay-200">
-                    Siddhanta isn't built on generic marketing; it is built on rigorous industrial science. The foundation of our company is rooted in a deep technical background managing complex projects within the commercial water treatment sector.
-                </p>
-                <p class="text-slate-400 leading-relaxed animate-fadeInUp delay-300">
-                    Understanding the microscopic chemistry of water systems, the demands of heavy factory engineering, and the strict environmental compliance required by modern industry allows us to formulate products that don't just promise green results—they guarantee heavy-duty operational efficacy. We engineer solutions with the precision of a project engineer.
-                </p>
-            </div>
-            <div class="bg-gradient-to-br from-slate-900 to-[#0A192F] border border-slate-700 p-10 rounded-3xl relative overflow-hidden animate-slideInRight">
-                <div class="absolute -right-10 -top-10 w-40 h-40 bg-[#00F2FE] rounded-full blur-[100px] opacity-20 animate-pulse"></div>
-                <h4 class="text-xl font-bold text-white mb-4 animate-fadeInUp delay-100 relative z-10">Why Technical Knowledge Matters:</h4>
-                <ul class="space-y-4 stagger relative z-10">
-                    <li class="flex items-start reveal">
-                        <svg class="w-6 h-6 text-[#00F2FE] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span class="text-slate-300">Exact pH balancing for sensitive machinery.</span>
-                    </li>
-                    <li class="flex items-start reveal">
-                        <svg class="w-6 h-6 text-[#00F2FE] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span class="text-slate-300">Advanced solvent replacement without losing cutting power.</span>
-                    </li>
-                    <li class="flex items-start reveal">
-                        <svg class="w-6 h-6 text-[#00F2FE] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span class="text-slate-300">Ensuring zero hazardous residue in eco-system discharge.</span>
-                    </li>
+    <!-- Industries -->
+    <section id="industries">
+        <div class="section-header">
+            <div class="section-label">Market Reach</div>
+            <h2 class="section-title">Trusted Industries</h2>
+            <p class="section-subtitle">Serving leaders across multiple sectors</p>
+        </div>
+
+        <div class="industries-grid">
+            <div class="industry-tag fade-in">🏗️ Manufacturing</div>
+            <div class="industry-tag fade-in">🚗 Automotive</div>
+            <div class="industry-tag fade-in">🏢 Corporate</div>
+            <div class="industry-tag fade-in">🏨 Hospitality</div>
+            <div class="industry-tag fade-in">🏥 Healthcare</div>
+            <div class="industry-tag fade-in">🛒 Retail</div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise">
+        <div class="expertise-container">
+            <div class="expertise-content">
+                <h3>Technical Excellence Behind Every Product</h3>
+                <p>Siddhanta is built on rigorous industrial science. Our foundation is rooted in deep technical expertise managing complex projects within commercial water treatment.</p>
+                
+                <ul class="expertise-list">
+                    <li><span>Exact pH balancing for sensitive machinery</span></li>
+                    <li><span>Advanced solvent replacement without losing cutting power</span></li>
+                    <li><span>Zero hazardous residue in ecosystem discharge</span></li>
+                    <li><span>Batch-to-batch consistency and reliability</span></li>
                 </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- The 4-S Pillars Framework -->
-    <section id="pillars" class="py-24 bg-slate-950/40 relative section-fade">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3 animate-fadeInUp">Our Core Architecture</h2>
-                <p class="text-3xl md:text-4xl font-black text-white tracking-tight animate-fadeInUp delay-100">The 4-S Pillars of Principle</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger">
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-[#00F2FE]/40 transition group card-hover reveal overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#00F2FE]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="text-xs font-bold text-[#00F2FE] tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition relative z-10">01 / Innovation</div>
-                    <h3 class="text-xl font-bold text-white mb-3 relative z-10">SCIENCE</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed relative z-10">Rigorous technical precision and advanced green chemistry. We engineer formulas that match or beat heavy traditional standards.</p>
-                </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-amber-400/40 transition group card-hover reveal overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="text-xs font-bold text-amber-400 tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition relative z-10">02 / Duty</div>
-                    <h3 class="text-xl font-bold text-white mb-3 relative z-10">SUSTAINABILITY</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed relative z-10">An unbroken commitment to the Natural ecosystem. Our methodologies actively preserve resources and eliminate toxic footprints.</p>
-                </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-[#00F2FE]/40 transition group card-hover reveal overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#00F2FE]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="text-xs font-bold text-[#00F2FE] tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition relative z-10">03 / Care</div>
-                    <h3 class="text-xl font-bold text-white mb-3 relative z-10">SAFETY</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed relative z-10">Absolute protection for the end-user, operators, and the assets our products touch. Transparency is our baseline standard.</p>
-                </div>
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-amber-400/40 transition group card-hover reveal overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="text-xs font-bold text-amber-400 tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition relative z-10">04 / Trust</div>
-                    <h3 class="text-xl font-bold text-white mb-3 relative z-10">STABILITY</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed relative z-10">Consistency you can rely on. From perfect batch-to-batch uniformity to long-term corporate partnerships, our word is absolute truth.</p>
-                </div>
+            <div class="expertise-image">
+                <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 20 40 L 30 15 L 30 95 L 20 70 Z" fill="#003D82"/>
+                    <path d="M 30 15 L 50 5 L 50 85 L 30 95 Z" fill="#0A4FA6"/>
+                    <path d="M 50 5 L 70 25 L 70 75 L 50 85 Z" fill="#00D4AA"/>
+                    <path d="M 70 25 L 80 40 L 80 70 L 70 75 Z" fill="#F5A623"/>
+                    <path d="M 30 50 L 70 50 L 70 60 L 30 60 Z" fill="#FFD700"/>
+                    <path d="M 40 45 L 60 40 L 60 65 L 40 60 Z" fill="none" stroke="#00F2FE" stroke-width="1.5" opacity="0.8"/>
+                </svg>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action / Contact -->
-    <section id="contact" class="py-24 max-w-5xl mx-auto px-6 section-fade">
-        <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-10 md:p-16 relative overflow-hidden shadow-2xl">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,166,35,0.05),transparent_40%)] animate-pulse"></div>
-            
-            <div class="grid md:grid-cols-2 gap-12 relative z-10">
-                <!-- Left: CTA Text -->
-                <div class="animate-slideInLeft">
-                    <h2 class="text-3xl font-black text-white mb-4 animate-fadeInUp">Let's Build the Future Together</h2>
-                    <p class="text-slate-400 mb-8 leading-relaxed animate-fadeInUp delay-100">
-                        Whether you need a high-performance bio-degreaser for your workshop or a complete water treatment consultation for your plant, we are ready to elevate your standards.
-                    </p>
-                    <div class="flex flex-col gap-4 stagger">
-                        <a href="mailto:patilsahil6868@gmail.com?subject=Requesting%20a%20Product%20Sample" class="inline-flex justify-center items-center bg-gradient-to-r from-[#00F2FE] to-amber-400 text-[#0A192F] px-8 py-3.5 rounded-xl font-black tracking-wide shadow-lg hover:opacity-90 transition btn-primary reveal">
-                            Request a Product Sample
-                        </a>
-                        <a href="https://wa.me/918655843684" target="_blank" class="inline-flex justify-center items-center bg-transparent border border-[#00F2FE] text-[#00F2FE] px-8 py-3.5 rounded-xl font-bold tracking-wide hover:bg-[#00F2FE]/10 transition btn-primary reveal">
-                            Schedule a Consultation
-                        </a>
+    <!-- 4-S Pillars -->
+    <section id="pillars">
+        <div class="section-header">
+            <div class="section-label">Core Values</div>
+            <h2 class="section-title">4-S Pillars of Principle</h2>
+            <p class="section-subtitle">The foundation of our commitment</p>
+        </div>
+
+        <div class="pillars-grid">
+            <div class="pillar-card fade-in">
+                <div class="pillar-number">1</div>
+                <h3>SCIENCE</h3>
+                <p>Rigorous technical precision and advanced green chemistry. We engineer formulas that match or beat heavy traditional standards.</p>
+            </div>
+
+            <div class="pillar-card fade-in">
+                <div class="pillar-number">2</div>
+                <h3>SUSTAINABILITY</h3>
+                <p>Unbroken commitment to the natural ecosystem. Our methodologies actively preserve resources and eliminate toxic footprints.</p>
+            </div>
+
+            <div class="pillar-card fade-in">
+                <div class="pillar-number">3</div>
+                <h3>SAFETY</h3>
+                <p>Absolute protection for end-users, operators, and assets. Transparency is our baseline standard.</p>
+            </div>
+
+            <div class="pillar-card fade-in">
+                <div class="pillar-number">4</div>
+                <h3>STABILITY</h3>
+                <p>Consistency you can rely on. Perfect batch-to-batch uniformity and long-term corporate partnerships.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact">
+        <div class="contact-container">
+            <div>
+                <h2>Let's Transform Your Standards</h2>
+                <p>Whether you need high-performance bio-degreasers for your workshop or complete water treatment solutions for your plant, we're ready to elevate your operations.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:patilsahil6868@gmail.com?subject=Product%20Sample%20Request" class="btn-contact primary">Request Sample</a>
+                    <a href="https://wa.me/918655843684" target="_blank" class="btn-contact secondary">Chat on WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>Direct Contact</h4>
+                        <p><a href="tel:+918655843684" style="color: inherit; text-decoration: none;">+91 86558 43684</a></p>
                     </div>
                 </div>
-                
-                <!-- Right: Contact Info -->
-                <div class="flex flex-col justify-center space-y-6 md:pl-10 md:border-l border-slate-800 animate-slideInRight">
-                    <div class="reveal">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Direct Contact</div>
-                        <a href="tel:+918655843684" class="text-2xl font-bold text-white hover:text-amber-400 transition block mb-1 animate-fadeInUp delay-200">
-                            +91 86558 43684
-                        </a>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h4>Email Address</h4>
+                        <p><a href="mailto:patilsahil6868@gmail.com" style="color: inherit; text-decoration: none;">patilsahil6868@gmail.com</a></p>
                     </div>
-                    <div class="reveal">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Email Address</div>
-                        <a href="mailto:patilsahil6868@gmail.com" class="text-lg font-medium text-[#00F2FE] hover:text-white transition break-all block mb-1 animate-fadeInUp delay-300">
-                            patilsahil6868@gmail.com
-                        </a>
-                    </div>
-                    <div class="reveal">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Headquarters</div>
-                        <div class="text-lg font-medium text-slate-300 animate-fadeInUp delay-400">
-                            Thane, Maharashtra, India
-                        </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Headquarters</h4>
+                        <p>Thane, Maharashtra, India</p>
                     </div>
                 </div>
             </div>
@@ -536,40 +913,33 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 py-10 text-center bg-[#0A192F]">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="text-sm font-bold text-white flex items-center gap-2 animate-fadeInUp">
-                <span class="text-[#00F2FE]">S</span> SIDDHANTA
-            </div>
-            <div class="text-xs text-slate-500 tracking-wider animate-fadeInUp delay-100">
-                &copy; 2026 Siddhanta. Built on Pillars of Principle. All Rights Reserved.
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 Siddhanta. Built on Pillars of Principle. All Rights Reserved.</p>
     </footer>
 
-    <!-- Scroll Reveal Script -->
     <script>
-        // Smooth scroll reveal animations
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealOnScroll = () => {
-            revealElements.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
         };
 
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-        // Smooth navigation
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -577,21 +947,6 @@
                 }
             });
         });
-
-        // Add animation on page load
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
-        });
-
-        // Parallax effect on hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroElement = document.querySelector('section');
-            if (heroElement) {
-                heroElement.style.backgroundPosition = `0% ${scrolled * 0.5}px`;
-            }
-        });
     </script>
-
 </body>
 </html>
