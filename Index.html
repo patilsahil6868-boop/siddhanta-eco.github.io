@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhanta | Established Principles. Powerful Impact.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root {
+            --color-navy: #0A192F;
+            --color-teal: #00F2FE;
+            --color-gold: #F5A623;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-[#0A192F] text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-navy">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-slate-800 backdrop-blur-md sticky top-0 z-50 bg-[#0A192F]/90">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Abstract Logo Symbol -->
+                <div class="w-10 h-10 flex items-center justify-between px-1.5 py-1 border border-[#00F2FE] rounded-lg">
+                    <div class="w-1.5 h-full bg-[#00F2FE] rounded-full"></div>
+                    <div class="w-1.5 h-4/5 bg-amber-400 rounded-full self-center"></div>
+                    <div class="w-1.5 h-full bg-[#00F2FE] rounded-full"></div>
+                </div>
+                <span class="text-2xl font-black tracking-wider text-white uppercase">Siddhanta</span>
+            </div>
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide items-center">
+                <a href="#offerings" class="hover:text-[#00F2FE] transition">Offerings</a>
+                <a href="#industries" class="hover:text-[#00F2FE] transition">Industries</a>
+                <a href="#expertise" class="hover:text-[#00F2FE] transition">Expertise</a>
+                <a href="#pillars" class="hover:text-[#00F2FE] transition">4-S Pillars</a>
+            </nav>
+            <div class="hidden md:flex space-x-4">
+                <a href="#contact" class="text-sm border border-[#00F2FE] text-[#00F2FE] px-5 py-2 rounded-full font-bold hover:bg-[#00F2FE]/10 transition">Sample</a>
+                <a href="#contact" class="text-sm bg-gradient-to-r from-[#00F2FE] to-amber-400 text-[#0A192F] px-5 py-2 rounded-full font-bold hover:opacity-90 transition">Consult</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-24 md:py-32 overflow-hidden border-b border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,242,254,0.08),transparent_45%)]"></div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 px-4 py-1.5 rounded-full mb-6 border border-amber-400/20">
+                Advanced Industrial & Commercial Formulations
+            </span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight">
+                Established Principles.<br>
+                <span class="bg-gradient-to-r from-[#00F2FE] via-emerald-400 to-amber-400 bg-clip-text text-transparent">Powerful Impact.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Engineered solutions for industrial cleaning, eco-housekeeping, and water treatment. We deliver uncompromised cutting power without the toxic footprint.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto bg-gradient-to-r from-[#00F2FE] to-amber-400 text-[#0A192F] px-8 py-4 rounded-xl font-black tracking-wide shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 transition text-center">
+                    Request a Product Sample
+                </a>
+                <a href="#contact" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-8 py-4 rounded-xl font-bold tracking-wide transition text-center">
+                    Schedule a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Offerings Section -->
+    <section id="offerings" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-[#00F2FE] mb-3">Our Formulations</h2>
+            <p class="text-3xl md:text-4xl font-black text-white tracking-tight">Core Product Offerings</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl">
+                <div class="w-12 h-12 bg-[#00F2FE]/10 rounded-lg flex items-center justify-center mb-6 border border-[#00F2FE]/20">
+                    <span class="text-[#00F2FE] text-2xl font-black">1</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Industrial Heavy-Duty Cleaners</h3>
+                <p class="text-slate-400 leading-relaxed">Scientifically formulated to strip heavy grease, carbon, and industrial grime from machinery and factory floors without degrading expensive equipment.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6 border border-emerald-500/20">
+                    <span class="text-emerald-400 text-2xl font-black">2</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Specialized Bio-Degreasers</h3>
+                <p class="text-slate-400 leading-relaxed">Next-generation solvent replacements that use advanced biological action to break down tough hydrocarbons safely and sustainably.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl">
+                <div class="w-12 h-12 bg-amber-400/10 rounded-lg flex items-center justify-center mb-6 border border-amber-400/20">
+                    <span class="text-amber-400 text-2xl font-black">3</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Eco-Friendly Housekeeping Chemicals</h3>
+                <p class="text-slate-400 leading-relaxed">Premium, non-toxic cleaning agents designed for commercial spaces and direct retail consumers, ensuring absolute safety for end-users and surfaces.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-10 rounded-2xl">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 border border-blue-500/20">
+                    <span class="text-blue-400 text-2xl font-black">4</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Water Treatment Solutions</h3>
+                <p class="text-slate-400 leading-relaxed">Technical chemical programs and system management protocols to optimize industrial water systems, prevent scale, and ensure strict environmental compliance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Industries Section -->
+    <section id="industries" class="py-20 bg-slate-950/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-8">Trusted By Leaders Across</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide">Manufacturing Plants</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide">Automobile Workshops</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide">Corporate Offices</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide">Premium Hotels</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide">Hospitals & Healthcare</span>
+                <span class="px-6 py-3 bg-slate-900 border border-slate-700 rounded-full text-slate-300 font-semibold tracking-wide">Direct Retail Consumers</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Expertise Section -->
+    <section id="expertise" class="py-24 max-w-7xl mx-auto px-6 border-b border-slate-800">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-[#00F2FE] mb-3">The Edge</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Technical Expertise. Proven Performance.</h3>
+                <p class="text-slate-400 mb-6 leading-relaxed">
+                    Siddhanta isn't built on generic marketing; it is built on rigorous industrial science. The foundation of our company is rooted in a deep technical background managing complex projects within the commercial water treatment sector.
+                </p>
+                <p class="text-slate-400 leading-relaxed">
+                    Understanding the microscopic chemistry of water systems, the demands of heavy factory engineering, and the strict environmental compliance required by modern industry allows us to formulate products that don't just promise green results—they guarantee heavy-duty operational efficacy. We engineer solutions with the precision of a project engineer.
+                </p>
+            </div>
+            <div class="bg-gradient-to-br from-slate-900 to-[#0A192F] border border-slate-700 p-10 rounded-3xl relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-[#00F2FE] rounded-full blur-[100px] opacity-20"></div>
+                <h4 class="text-xl font-bold text-white mb-4">Why Technical Knowledge Matters:</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-[#00F2FE] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-slate-300">Exact pH balancing for sensitive machinery.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-[#00F2FE] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-slate-300">Advanced solvent replacement without losing cutting power.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-[#00F2FE] mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-slate-300">Ensuring zero hazardous residue in eco-system discharge.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 4-S Pillars Framework -->
+    <section id="pillars" class="py-24 bg-slate-950/40 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">Our Core Architecture</h2>
+                <p class="text-3xl md:text-4xl font-black text-white tracking-tight">The 4-S Pillars of Principle</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-[#00F2FE]/40 transition group">
+                    <div class="text-xs font-bold text-[#00F2FE] tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition">01 / Innovation</div>
+                    <h3 class="text-xl font-bold text-white mb-3">SCIENCE</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Rigorous technical precision and advanced green chemistry. We engineer formulas that match or beat heavy traditional standards.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-amber-400/40 transition group">
+                    <div class="text-xs font-bold text-amber-400 tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition">02 / Duty</div>
+                    <h3 class="text-xl font-bold text-white mb-3">SUSTAINABILITY</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">An unbroken commitment to the Natural ecosystem. Our methodologies actively preserve resources and eliminate toxic footprints.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-[#00F2FE]/40 transition group">
+                    <div class="text-xs font-bold text-[#00F2FE] tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition">03 / Care</div>
+                    <h3 class="text-xl font-bold text-white mb-3">SAFETY</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Absolute protection for the end-user, operators, and the assets our products touch. Transparency is our baseline standard.</p>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl hover:border-amber-400/40 transition group">
+                    <div class="text-xs font-bold text-amber-400 tracking-widest uppercase mb-4 opacity-60 group-hover:opacity-100 transition">04 / Trust</div>
+                    <h3 class="text-xl font-bold text-white mb-3">STABILITY</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Consistency you can rely on. From perfect batch-to-batch uniformity to long-term corporate partnerships, our word is absolute truth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact -->
+    <section id="contact" class="py-24 max-w-5xl mx-auto px-6">
+        <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-10 md:p-16 relative overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,166,35,0.05),transparent_40%)]"></div>
+            
+            <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                <!-- Left: CTA Text -->
+                <div>
+                    <h2 class="text-3xl font-black text-white mb-4">Let's Build the Future Together</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Whether you need a high-performance bio-degreaser for your workshop or a complete water treatment consultation for your plant, we are ready to elevate your standards.
+                    </p>
+                    <div class="flex flex-col gap-4">
+                        <a href="mailto:patilsahil6868@gmail.com?subject=Requesting%20a%20Product%20Sample" class="inline-flex justify-center items-center bg-gradient-to-r from-[#00F2FE] to-amber-400 text-[#0A192F] px-8 py-3.5 rounded-xl font-black tracking-wide shadow-lg hover:opacity-90 transition">
+                            Request a Product Sample
+                        </a>
+                        <a href="https://wa.me/918655843684" target="_blank" class="inline-flex justify-center items-center bg-transparent border border-[#00F2FE] text-[#00F2FE] px-8 py-3.5 rounded-xl font-bold tracking-wide hover:bg-[#00F2FE]/10 transition">
+                            Schedule a Consultation
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right: Contact Info -->
+                <div class="flex flex-col justify-center space-y-6 md:pl-10 md:border-l border-slate-800">
+                    <div>
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Direct Contact</div>
+                        <a href="tel:+918655843684" class="text-2xl font-bold text-white hover:text-amber-400 transition block mb-1">
+                            +91 86558 43684
+                        </a>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Email Address</div>
+                        <a href="mailto:patilsahil6868@gmail.com" class="text-lg font-medium text-[#00F2FE] hover:text-white transition break-all block mb-1">
+                            patilsahil6868@gmail.com
+                        </a>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Headquarters</div>
+                        <div class="text-lg font-medium text-slate-300">
+                            Thane, Maharashtra, India
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-10 text-center bg-[#0A192F]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-sm font-bold text-white flex items-center gap-2">
+                <span class="text-[#00F2FE]">S</span> SIDDHANTA
+            </div>
+            <div class="text-xs text-slate-500 tracking-wider">
+                &copy; 2026 Siddhanta. Built on Pillars of Principle. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
