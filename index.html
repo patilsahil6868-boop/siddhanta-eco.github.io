@@ -45,16 +45,16 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            opacity: 0.05;
+            width: 900px;
+            height: 900px;
+            opacity: 0.08;
             z-index: -1;
             pointer-events: none;
-            background: url('data:image/svg+xml,<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><path d="M 20 40 L 30 15 L 30 95 L 20 70 Z" fill="%23003D82"/><path d="M 30 15 L 50 5 L 50 85 L 30 95 Z" fill="%230A4FA6"/><path d="M 50 5 L 70 25 L 70 75 L 50 85 Z" fill="%2300D4AA"/><path d="M 70 25 L 80 40 L 80 70 L 70 75 Z" fill="%23F5A623"/><path d="M 30 50 L 70 50 L 70 60 L 30 60 Z" fill="%23FFD700"/><path d="M 40 45 L 60 40 L 60 65 L 40 60 Z" fill="none" stroke="%2300F2FE" stroke-width="1.5" opacity="0.8"/></svg>');
+            background-image: url('data:image/svg+xml,<svg viewBox="0 0 629 518" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23003D82;stop-opacity:1" /><stop offset="50%25" style="stop-color:%2300D4AA;stop-opacity:1" /><stop offset="100%25" style="stop-color:%23F5A623;stop-opacity:1" /></linearGradient></defs><g filter="drop-shadow(0 10px 30px rgba(0,0,0,0.2))"><path d="M 200 150 L 280 80 L 280 400 L 200 350 Z" fill="%23003D82" /><path d="M 280 80 L 380 40 L 380 360 L 280 400 Z" fill="%230A4FA6" /><path d="M 380 40 L 480 120 L 480 340 L 380 360 Z" fill="%2300D4AA" /><path d="M 480 120 L 550 200 L 550 320 L 480 340 Z" fill="%23F5A623" /><path d="M 280 230 L 480 230 L 480 270 L 280 270 Z" fill="%23FFD700" /><path d="M 320 210 L 440 180 L 440 290 L 320 260 Z" fill="none" stroke="%2300D4AA" stroke-width="8" opacity="0.6" /><path d="M 310 220 L 450 170 L 450 300 L 310 270 Z" fill="none" stroke="%23F5A623" stroke-width="4" opacity="0.4" /></g></svg>');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            filter: blur(40px);
+            filter: blur(50px);
         }
 
         /* ============================================
@@ -482,12 +482,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 400px;
+            height: 400px;
+            background-image: url('data:image/svg+xml,<svg viewBox="0 0 629 518" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23003D82;stop-opacity:1" /><stop offset="50%25" style="stop-color:%2300D4AA;stop-opacity:1" /><stop offset="100%25" style="stop-color:%23F5A623;stop-opacity:1" /></linearGradient></defs><g filter="drop-shadow(0 10px 30px rgba(0,0,0,0.2))"><path d="M 200 150 L 280 80 L 280 400 L 200 350 Z" fill="%23003D82" /><path d="M 280 80 L 380 40 L 380 360 L 280 400 Z" fill="%230A4FA6" /><path d="M 380 40 L 480 120 L 480 340 L 380 360 Z" fill="%2300D4AA" /><path d="M 480 120 L 550 200 L 550 320 L 480 340 Z" fill="%23F5A623" /><path d="M 280 230 L 480 230 L 480 270 L 280 270 Z" fill="%23FFD700" /><path d="M 320 210 L 440 180 L 440 290 L 320 260 Z" fill="none" stroke="%2300D4AA" stroke-width="8" opacity="0.6" /><path d="M 310 220 L 450 170 L 450 300 L 310 270 Z" fill="none" stroke="%23F5A623" stroke-width="4" opacity="0.4" /></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.2;
+            filter: blur(20px);
         }
 
         .expertise-image svg {
             width: 200px;
             height: 200px;
-            opacity: 0.5;
+            opacity: 0.7;
+            position: relative;
+            z-index: 1;
         }
 
         @media (max-width: 968px) {
@@ -561,6 +580,23 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background-image: url('data:image/svg+xml,<svg viewBox="0 0 629 518" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23003D82;stop-opacity:1" /><stop offset="50%25" style="stop-color:%2300D4AA;stop-opacity:1" /><stop offset="100%25" style="stop-color:%23F5A623;stop-opacity:1" /></linearGradient></defs><g filter="drop-shadow(0 10px 30px rgba(0,0,0,0.2))"><path d="M 200 150 L 280 80 L 280 400 L 200 350 Z" fill="%23003D82" /><path d="M 280 80 L 380 40 L 380 360 L 280 400 Z" fill="%230A4FA6" /><path d="M 380 40 L 480 120 L 480 340 L 380 360 Z" fill="%2300D4AA" /><path d="M 480 120 L 550 200 L 550 320 L 480 340 Z" fill="%23F5A623" /><path d="M 280 230 L 480 230 L 480 270 L 280 270 Z" fill="%23FFD700" /><path d="M 320 210 L 440 180 L 440 290 L 320 260 Z" fill="none" stroke="%2300D4AA" stroke-width="8" opacity="0.6" /><path d="M 310 220 L 450 170 L 450 300 L 310 270 Z" fill="none" stroke="%23F5A623" stroke-width="4" opacity="0.4" /></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
         }
 
         .contact-container h2 {
@@ -568,6 +604,8 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-container p {
@@ -575,12 +613,16 @@
             opacity: 0.95;
             margin-bottom: 2rem;
             line-height: 1.8;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-buttons {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
         .btn-contact {
@@ -615,6 +657,8 @@
         .contact-info {
             display: grid;
             gap: 2.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-item {
@@ -645,6 +689,16 @@
             opacity: 0.9;
             font-size: 0.95rem;
             margin: 0;
+        }
+
+        .contact-details a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            opacity: 0.7;
         }
 
         @media (max-width: 968px) {
@@ -717,7 +771,7 @@
     </style>
 </head>
 <body>
-    <!-- Background Watermark -->
+    <!-- Background Watermark with Logo -->
     <div class="hero-bg"></div>
     <div class="logo-watermark"></div>
 
@@ -825,13 +879,23 @@
             </div>
 
             <div class="expertise-image">
-                <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 20 40 L 30 15 L 30 95 L 20 70 Z" fill="#003D82"/>
-                    <path d="M 30 15 L 50 5 L 50 85 L 30 95 Z" fill="#0A4FA6"/>
-                    <path d="M 50 5 L 70 25 L 70 75 L 50 85 Z" fill="#00D4AA"/>
-                    <path d="M 70 25 L 80 40 L 80 70 L 70 75 Z" fill="#F5A623"/>
-                    <path d="M 30 50 L 70 50 L 70 60 L 30 60 Z" fill="#FFD700"/>
-                    <path d="M 40 45 L 60 40 L 60 65 L 40 60 Z" fill="none" stroke="#00F2FE" stroke-width="1.5" opacity="0.8"/>
+                <svg viewBox="0 0 629 518" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#003D82;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#00D4AA;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F5A623;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <g filter="drop-shadow(0 10px 30px rgba(0,0,0,0.2))">
+                        <path d="M 200 150 L 280 80 L 280 400 L 200 350 Z" fill="#003D82" />
+                        <path d="M 280 80 L 380 40 L 380 360 L 280 400 Z" fill="#0A4FA6" />
+                        <path d="M 380 40 L 480 120 L 480 340 L 380 360 Z" fill="#00D4AA" />
+                        <path d="M 480 120 L 550 200 L 550 320 L 480 340 Z" fill="#F5A623" />
+                        <path d="M 280 230 L 480 230 L 480 270 L 280 270 Z" fill="#FFD700" />
+                        <path d="M 320 210 L 440 180 L 440 290 L 320 260 Z" fill="none" stroke="#00D4AA" stroke-width="8" opacity="0.6" />
+                        <path d="M 310 220 L 450 170 L 450 300 L 310 270 Z" fill="none" stroke="#F5A623" stroke-width="4" opacity="0.4" />
+                    </g>
                 </svg>
             </div>
         </div>
@@ -889,7 +953,7 @@
                     <div class="contact-icon">📞</div>
                     <div class="contact-details">
                         <h4>Direct Contact</h4>
-                        <p><a href="tel:+918655843684" style="color: inherit; text-decoration: none;">+91 86558 43684</a></p>
+                        <p><a href="tel:+918655843684">+91 86558 43684</a></p>
                     </div>
                 </div>
 
@@ -897,7 +961,7 @@
                     <div class="contact-icon">✉️</div>
                     <div class="contact-details">
                         <h4>Email Address</h4>
-                        <p><a href="mailto:patilsahil6868@gmail.com" style="color: inherit; text-decoration: none;">patilsahil6868@gmail.com</a></p>
+                        <p><a href="mailto:patilsahil6868@gmail.com">patilsahil6868@gmail.com</a></p>
                     </div>
                 </div>
 
