@@ -24,7 +24,7 @@
             color: #1a1a1a;
             line-height: 1.6;
             overflow-x: hidden;
-            background: white;
+            background: #ffffff;
         }
 
         /* ============================================
@@ -37,7 +37,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #ffffff 100%);
+            background: #ffffff;
             z-index: -1;
             overflow: hidden;
         }
@@ -46,45 +46,45 @@
         .floating-orb {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.08;
-            filter: blur(40px);
-            animation: float 20s infinite ease-in-out;
+            opacity: 0.06;
+            filter: blur(60px);
+            animation: float 25s infinite ease-in-out;
         }
 
         .orb-1 {
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             background: linear-gradient(135deg, #003D82, #00D4AA);
-            top: -10%;
-            left: -5%;
+            top: -15%;
+            left: -10%;
             animation-delay: 0s;
         }
 
         .orb-2 {
-            width: 250px;
-            height: 250px;
+            width: 350px;
+            height: 350px;
             background: linear-gradient(135deg, #F5A623, #00D4AA);
-            top: 30%;
-            right: -10%;
-            animation-delay: 5s;
+            top: 20%;
+            right: -15%;
+            animation-delay: 8s;
         }
 
         .orb-3 {
-            width: 280px;
-            height: 280px;
+            width: 380px;
+            height: 380px;
             background: linear-gradient(135deg, #003D82, #F5A623);
-            bottom: -5%;
-            left: 10%;
-            animation-delay: 10s;
+            bottom: -20%;
+            left: 5%;
+            animation-delay: 16s;
         }
 
         .orb-4 {
-            width: 320px;
-            height: 320px;
+            width: 420px;
+            height: 420px;
             background: linear-gradient(135deg, #00D4AA, #003D82);
-            bottom: 10%;
-            right: 5%;
-            animation-delay: 15s;
+            bottom: -10%;
+            right: -10%;
+            animation-delay: 24s;
         }
 
         @keyframes float {
@@ -92,39 +92,13 @@
                 transform: translate(0px, 0px) scale(1);
             }
             25% {
-                transform: translate(30px, -30px) scale(1.05);
+                transform: translate(50px, -50px) scale(1.1);
             }
             50% {
-                transform: translate(-20px, 20px) scale(0.95);
+                transform: translate(-30px, 30px) scale(0.9);
             }
             75% {
-                transform: translate(40px, 10px) scale(1.02);
-            }
-        }
-
-        /* Animated gradient background */
-        .gradient-animate {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            opacity: 0.02;
-            z-index: 0;
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
+                transform: translate(40px, 20px) scale(1.05);
             }
         }
 
@@ -136,16 +110,16 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             animation: slideDown 0.8s ease-out;
         }
 
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -171,37 +145,33 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            animation: logoGlow 3s ease-in-out infinite;
+            animation: logoGlow 4s ease-in-out infinite;
         }
 
         @keyframes logoGlow {
             0%, 100% {
                 text-shadow: 0 0 0px rgba(0, 61, 130, 0);
+                transform: scale(1);
             }
             50% {
-                text-shadow: 0 0 20px rgba(0, 61, 130, 0.3);
+                text-shadow: 0 0 25px rgba(0, 61, 130, 0.4);
+                transform: scale(1.02);
             }
         }
 
         .logo span {
-            background: linear-gradient(135deg, #003D82, #00D4AA, #F5A623);
+            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623, #003D82);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientRotate 4s ease infinite;
-            background-size: 300% 300%;
+            animation: gradientShift 5s ease infinite;
         }
 
-        @keyframes gradientRotate {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .nav-links {
@@ -292,20 +262,20 @@
             display: inline-block;
             position: relative;
             box-shadow: 0 4px 15px rgba(0, 61, 130, 0.3);
-            animation: pulse 2s ease-in-out infinite;
+            animation: btnPulse 2.5s ease-in-out infinite;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 61, 130, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 61, 130, 0.5);
         }
 
-        @keyframes pulse {
+        @keyframes btnPulse {
             0%, 100% {
                 box-shadow: 0 4px 15px rgba(0, 61, 130, 0.3);
             }
             50% {
-                box-shadow: 0 4px 25px rgba(0, 61, 130, 0.5);
+                box-shadow: 0 4px 30px rgba(0, 61, 130, 0.6);
             }
         }
 
@@ -331,13 +301,13 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: white;
+            background: #ffffff;
         }
 
         .hero-content {
             max-width: 900px;
             z-index: 2;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 1.2s ease-out;
             position: relative;
         }
 
@@ -351,20 +321,17 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
             letter-spacing: 0.5px;
-            animation: bounceIn 1s ease-out;
+            animation: bounceInScale 1s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        @keyframes bounceIn {
+        @keyframes bounceInScale {
             0% {
                 opacity: 0;
-                transform: scale(0.8);
-            }
-            50% {
-                opacity: 1;
+                transform: scale(0.3) translateY(20px);
             }
             100% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1) translateY(0);
             }
         }
 
@@ -375,28 +342,22 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             color: #1a1a1a;
-            animation: slideInUp 1s ease-out 0.2s both;
+            animation: slideInUp 1.2s ease-out 0.2s both;
         }
 
         .hero h1 .gradient {
-            background: linear-gradient(135deg, #003D82, #00D4AA, #F5A623);
+            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623, #003D82);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientShift2 6s ease infinite;
-            background-size: 300% 300%;
+            animation: gradientFlow 8s ease infinite;
         }
 
-        @keyframes gradientShift2 {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero p {
@@ -404,7 +365,7 @@
             color: #555;
             margin-bottom: 2.5rem;
             line-height: 1.8;
-            animation: slideInUp 1s ease-out 0.4s both;
+            animation: slideInUp 1.2s ease-out 0.4s both;
         }
 
         .hero-buttons {
@@ -412,13 +373,24 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: slideInUp 1s ease-out 0.6s both;
+            animation: slideInUp 1.2s ease-out 0.6s both;
         }
 
         @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
             }
             to {
                 opacity: 1;
@@ -442,31 +414,21 @@
             background: linear-gradient(135deg, #003D82, #005FA3);
             color: white;
             border: 2px solid transparent;
-            box-shadow: 0 6px 20px rgba(0, 61, 130, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 61, 130, 0.35);
+            animation: buttonGlow 3s ease-in-out infinite;
         }
 
         .btn-primary-lg:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0, 61, 130, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0, 61, 130, 0.6);
         }
 
-        .btn-primary-lg::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% {
-                transform: translate(0, 0);
+        @keyframes buttonGlow {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(0, 61, 130, 0.35);
             }
-            100% {
-                transform: translate(50px, 50px);
+            50% {
+                box-shadow: 0 8px 40px rgba(0, 61, 130, 0.6);
             }
         }
 
@@ -480,7 +442,7 @@
         .btn-secondary-lg:hover {
             background: #003D82;
             color: white;
-            box-shadow: 0 10px 25px rgba(0, 61, 130, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 61, 130, 0.4);
         }
 
         /* ============================================
@@ -493,7 +455,7 @@
             padding: 6rem 2rem;
             position: relative;
             z-index: 2;
-            background: white;
+            background: #ffffff;
         }
 
         .section-header {
@@ -503,28 +465,25 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .section-label {
             font-size: 0.9rem;
             color: #003D82;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
             animation: slideInDown 1s ease-out;
+            display: inline-block;
         }
 
         @keyframes slideInDown {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-25px);
             }
             to {
                 opacity: 1;
@@ -560,14 +519,26 @@
         }
 
         .offering-card {
-            background: white;
+            background: #ffffff;
             padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
             position: relative;
             overflow: hidden;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .offering-card::before {
@@ -576,49 +547,40 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623);
-            animation: gradientFlow 3s ease infinite;
+            height: 5px;
+            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623, #003D82);
+            background-size: 300% 100%;
+            animation: borderFlow 4s ease infinite;
         }
 
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        @keyframes borderFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 300% 0%; }
         }
 
         .offering-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(0, 61, 130, 0.2);
+            box-shadow: 0 25px 55px rgba(0, 61, 130, 0.25);
+            border-color: rgba(0, 61, 130, 0.1);
         }
 
         .offering-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, #E3F2FD, #C8E6F5);
-            border-radius: 12px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             color: #003D82;
-            animation: bounce 2s ease-in-out infinite;
+            animation: iconBounce 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
         }
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
         }
 
         .offering-card h3 {
@@ -646,10 +608,10 @@
         }
 
         .industry-tag {
-            background: white;
+            background: #ffffff;
             border: 2px solid #e0e0e0;
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: center;
             font-weight: 600;
             color: #555;
@@ -657,6 +619,18 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            animation: shimmerIn 0.8s ease-out;
+        }
+
+        @keyframes shimmerIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .industry-tag::before {
@@ -666,25 +640,21 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             animation: shimmerEffect 3s infinite;
         }
 
         @keyframes shimmerEffect {
-            0% {
-                left: -100%;
-            }
-            100% {
-                left: 100%;
-            }
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
         .industry-tag:hover {
             border-color: #003D82;
-            color: #003D82;
-            background: #E3F2FD;
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 61, 130, 0.2);
+            color: white;
+            background: linear-gradient(135deg, #003D82, #005FA3);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 61, 130, 0.25);
         }
 
         /* ============================================
@@ -705,6 +675,18 @@
             color: #1a1a1a;
             margin-bottom: 1.5rem;
             line-height: 1.3;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .expertise-content p {
@@ -712,6 +694,7 @@
             margin-bottom: 1.5rem;
             font-size: 1rem;
             line-height: 1.8;
+            animation: slideInLeft 1s ease-out 0.1s both;
         }
 
         .expertise-list {
@@ -724,15 +707,10 @@
             margin-bottom: 1.5rem;
             padding-left: 0;
             align-items: flex-start;
-            animation: slideInLeft 0.8s ease-out both;
+            animation: listItemSlide 0.8s ease-out both;
         }
 
-        .expertise-list li:nth-child(1) { animation-delay: 0.1s; }
-        .expertise-list li:nth-child(2) { animation-delay: 0.2s; }
-        .expertise-list li:nth-child(3) { animation-delay: 0.3s; }
-        .expertise-list li:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes slideInLeft {
+        @keyframes listItemSlide {
             from {
                 opacity: 0;
                 transform: translateX(-30px);
@@ -743,21 +721,28 @@
             }
         }
 
+        .expertise-list li:nth-child(1) { animation-delay: 0.1s; }
+        .expertise-list li:nth-child(2) { animation-delay: 0.2s; }
+        .expertise-list li:nth-child(3) { animation-delay: 0.3s; }
+        .expertise-list li:nth-child(4) { animation-delay: 0.4s; }
+
         .expertise-list li::before {
             content: '✓';
             color: #F5A623;
-            font-weight: 700;
+            font-weight: 900;
             font-size: 1.3rem;
             flex-shrink: 0;
-            animation: checkPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: checkMark 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        @keyframes checkPop {
+        @keyframes checkMark {
             0% {
                 transform: scale(0) rotate(-45deg);
+                opacity: 0;
             }
             100% {
                 transform: scale(1) rotate(0deg);
+                opacity: 1;
             }
         }
 
@@ -777,13 +762,13 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            animation: scaleIn 1s ease-out;
+            animation: zoomIn 1s ease-out;
         }
 
-        @keyframes scaleIn {
+        @keyframes zoomIn {
             from {
                 opacity: 0;
-                transform: scale(0.8);
+                transform: scale(0.85);
             }
             to {
                 opacity: 1;
@@ -798,22 +783,14 @@
             position: relative;
             z-index: 1;
             filter: drop-shadow(0 10px 30px rgba(0, 61, 130, 0.2));
-            animation: float3d 4s ease-in-out infinite;
+            animation: floatImg 5s ease-in-out infinite;
         }
 
-        @keyframes float3d {
-            0%, 100% {
-                transform: translateY(0px) rotateZ(0deg);
-            }
-            25% {
-                transform: translateY(-10px) rotateZ(-2deg);
-            }
-            50% {
-                transform: translateY(-20px) rotateZ(2deg);
-            }
-            75% {
-                transform: translateY(-10px) rotateZ(-2deg);
-            }
+        @keyframes floatImg {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(2deg); }
+            50% { transform: translateY(-30px) rotate(0deg); }
+            75% { transform: translateY(-15px) rotate(-2deg); }
         }
 
         @media (max-width: 968px) {
@@ -834,15 +811,27 @@
         }
 
         .pillar-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
-            border: 1px solid rgba(0, 61, 130, 0.1);
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+            border: 2px solid rgba(0, 61, 130, 0.1);
             padding: 2.5rem;
             border-radius: 15px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            animation: cardSlide 0.8s ease-out;
+        }
+
+        @keyframes cardSlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .pillar-card::before {
@@ -852,22 +841,18 @@
             right: -50%;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(0, 212, 170, 0.15) 0%, transparent 70%);
-            animation: rotateBg 10s linear infinite;
+            background: radial-gradient(circle, rgba(0, 212, 170, 0.2) 0%, transparent 70%);
+            animation: rotate360 12s linear infinite;
         }
 
-        @keyframes rotateBg {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+        @keyframes rotate360 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .pillar-card:hover {
             transform: translateY(-20px);
-            box-shadow: 0 25px 50px rgba(0, 61, 130, 0.15);
+            box-shadow: 0 30px 60px rgba(0, 61, 130, 0.2);
             border-color: #003D82;
         }
 
@@ -879,17 +864,17 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 0.5rem;
-            animation: countUp 2s ease-out;
+            animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        @keyframes countUp {
+        @keyframes popIn {
             from {
                 opacity: 0;
-                transform: scale(0.5);
+                transform: scale(0.5) rotateY(90deg);
             }
             to {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1) rotateY(0deg);
             }
         }
 
@@ -935,8 +920,8 @@
             right: -150px;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotateBg 20s linear infinite;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: rotate360 25s linear infinite;
             z-index: 0;
         }
 
@@ -947,6 +932,7 @@
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
+            animation: slideInLeft 1s ease-out;
         }
 
         .contact-container p {
@@ -956,6 +942,7 @@
             line-height: 1.8;
             position: relative;
             z-index: 1;
+            animation: slideInLeft 1s ease-out 0.1s both;
         }
 
         .contact-buttons {
@@ -964,6 +951,7 @@
             flex-wrap: wrap;
             position: relative;
             z-index: 1;
+            animation: slideInLeft 1s ease-out 0.2s both;
         }
 
         .btn-contact {
@@ -981,21 +969,17 @@
         .btn-contact.primary {
             background: white;
             color: #003D82;
-            animation: pulse2 2s ease-in-out infinite;
+            animation: contactPulse 2.5s ease-in-out infinite;
         }
 
-        @keyframes pulse2 {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-            }
+        @keyframes contactPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
         }
 
         .btn-contact.primary:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
         }
 
         .btn-contact.secondary {
@@ -1022,20 +1006,20 @@
             animation: slideInRight 0.8s ease-out both;
         }
 
-        .contact-item:nth-child(1) { animation-delay: 0.1s; }
-        .contact-item:nth-child(2) { animation-delay: 0.2s; }
-        .contact-item:nth-child(3) { animation-delay: 0.3s; }
-
         @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(30px);
+                transform: translateX(40px);
             }
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+
+        .contact-item:nth-child(1) { animation-delay: 0.2s; }
+        .contact-item:nth-child(2) { animation-delay: 0.3s; }
+        .contact-item:nth-child(3) { animation-delay: 0.4s; }
 
         .contact-icon {
             width: 50px;
@@ -1047,16 +1031,12 @@
             justify-content: center;
             font-size: 1.5rem;
             flex-shrink: 0;
-            animation: spin 4s linear infinite;
+            animation: spinIcon 6s linear infinite;
         }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+        @keyframes spinIcon {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .contact-details h4 {
@@ -1111,7 +1091,7 @@
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease-out;
+            transition: all 0.8s ease-out;
         }
 
         .fade-in.visible {
@@ -1150,8 +1130,8 @@
             }
 
             .floating-orb {
-                opacity: 0.04;
-                filter: blur(60px);
+                opacity: 0.03;
+                filter: blur(80px);
             }
         }
     </style>
@@ -1159,7 +1139,6 @@
 <body>
     <!-- Animated Background -->
     <div class="animated-bg">
-        <div class="gradient-animate"></div>
         <div class="floating-orb orb-1"></div>
         <div class="floating-orb orb-2"></div>
         <div class="floating-orb orb-3"></div>
