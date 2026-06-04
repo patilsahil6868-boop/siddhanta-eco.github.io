@@ -103,6 +103,68 @@
         }
 
         /* ============================================
+           LOGO SECTION AT TOP
+           ============================================ */
+
+        .logo-section {
+            background: linear-gradient(135deg, rgba(0, 61, 130, 0.05), rgba(0, 212, 170, 0.05));
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-out;
+            border-bottom: 2px solid rgba(0, 61, 130, 0.1);
+        }
+
+        .logo-display {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: -2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            animation: logoGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% {
+                text-shadow: 0 0 0px rgba(0, 61, 130, 0);
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(0, 61, 130, 0.5);
+                transform: scale(1.02);
+            }
+        }
+
+        .logo-display span {
+            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623, #003D82);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo-tagline {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        /* ============================================
            NAVIGATION
            ============================================ */
 
@@ -134,44 +196,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #1a1a1a;
-            letter-spacing: -1px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            animation: logoGlow 4s ease-in-out infinite;
-        }
-
-        @keyframes logoGlow {
-            0%, 100% {
-                text-shadow: 0 0 0px rgba(0, 61, 130, 0);
-                transform: scale(1);
-            }
-            50% {
-                text-shadow: 0 0 25px rgba(0, 61, 130, 0.4);
-                transform: scale(1.02);
-            }
-        }
-
-        .logo span {
-            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623, #003D82);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 5s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .nav-links {
@@ -658,110 +682,43 @@
         }
 
         /* ============================================
-           EXPERTISE SECTION
+           VIDEO SHOWCASE SECTION
            ============================================ */
 
-        .expertise-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .expertise-content h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .expertise-content p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.8;
-            animation: slideInLeft 1s ease-out 0.1s both;
-        }
-
-        .expertise-list {
-            list-style: none;
-        }
-
-        .expertise-list li {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-left: 0;
-            align-items: flex-start;
-            animation: listItemSlide 0.8s ease-out both;
-        }
-
-        @keyframes listItemSlide {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .expertise-list li:nth-child(1) { animation-delay: 0.1s; }
-        .expertise-list li:nth-child(2) { animation-delay: 0.2s; }
-        .expertise-list li:nth-child(3) { animation-delay: 0.3s; }
-        .expertise-list li:nth-child(4) { animation-delay: 0.4s; }
-
-        .expertise-list li::before {
-            content: '✓';
-            color: #F5A623;
-            font-weight: 900;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            animation: checkMark 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        @keyframes checkMark {
-            0% {
-                transform: scale(0) rotate(-45deg);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-
-        .expertise-list li span {
-            color: #555;
-            font-weight: 500;
-        }
-
-        .expertise-image {
-            background: linear-gradient(135deg, #E3F2FD, #C8E6F5);
-            border-radius: 15px;
-            padding: 3rem;
-            text-align: center;
-            min-height: 400px;
+        .video-showcase {
+            background: linear-gradient(135deg, rgba(0, 61, 130, 0.05), rgba(0, 212, 170, 0.05));
+            border-radius: 20px;
+            padding: 4rem 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 3rem;
             position: relative;
             overflow: hidden;
+            min-height: 500px;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .video-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 212, 170, 0.1) 0%, transparent 70%);
+            animation: rotate360 15s linear infinite;
+        }
+
+        @keyframes rotate360 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .video-container {
+            position: relative;
+            z-index: 1;
+            flex: 1;
             animation: zoomIn 1s ease-out;
         }
 
@@ -776,27 +733,51 @@
             }
         }
 
-        .expertise-image img {
-            width: 280px;
-            height: auto;
-            object-fit: contain;
+        .video-container video {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 61, 130, 0.3);
+            filter: drop-shadow(0 10px 30px rgba(0, 61, 130, 0.2));
+            animation: floatVideo 5s ease-in-out infinite;
+        }
+
+        @keyframes floatVideo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .video-content {
+            flex: 1;
             position: relative;
             z-index: 1;
-            filter: drop-shadow(0 10px 30px rgba(0, 61, 130, 0.2));
-            animation: floatImg 5s ease-in-out infinite;
+            animation: slideInLeft 1s ease-out;
         }
 
-        @keyframes floatImg {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-15px) rotate(2deg); }
-            50% { transform: translateY(-30px) rotate(0deg); }
-            75% { transform: translateY(-15px) rotate(-2deg); }
+        .video-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
 
-        @media (max-width: 968px) {
-            .expertise-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+        .video-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
 
@@ -843,11 +824,6 @@
             height: 100%;
             background: radial-gradient(circle, rgba(0, 212, 170, 0.2) 0%, transparent 70%);
             animation: rotate360 12s linear infinite;
-        }
-
-        @keyframes rotate360 {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .pillar-card:hover {
@@ -1066,6 +1042,11 @@
                 grid-template-columns: 1fr;
                 padding: 2.5rem;
             }
+            
+            .video-showcase {
+                flex-direction: column;
+                padding: 2.5rem;
+            }
         }
 
         /* ============================================
@@ -1104,6 +1085,14 @@
            ============================================ */
 
         @media (max-width: 768px) {
+            .logo-display {
+                font-size: 2.5rem;
+            }
+
+            .logo-tagline {
+                font-size: 0.95rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -1145,16 +1134,21 @@
         <div class="floating-orb orb-4"></div>
     </div>
 
+    <!-- Logo Section at Top -->
+    <section class="logo-section">
+        <div class="logo-display">
+            S <span>IDDHANTA</span>
+        </div>
+        <p class="logo-tagline">Established Principles. Powerful Impact.</p>
+    </section>
+
     <!-- Navigation -->
     <header>
         <div class="navbar">
-            <div class="logo">
-                S <span>IDDHANTA</span>
-            </div>
             <nav class="nav-links">
                 <a href="#offerings">Products</a>
                 <a href="#industries">Industries</a>
-                <a href="#expertise">Expertise</a>
+                <a href="#video">Our Story</a>
                 <a href="#pillars">Principles</a>
             </nav>
             <div class="nav-buttons">
@@ -1233,23 +1227,25 @@
         </div>
     </section>
 
-    <!-- Expertise -->
-    <section id="expertise">
-        <div class="expertise-container">
-            <div class="expertise-content">
-                <h3>Technical Excellence Behind Every Product</h3>
-                <p>Siddhanta is built on rigorous industrial science. Our foundation is rooted in deep technical expertise managing complex projects within commercial water treatment.</p>
-                
-                <ul class="expertise-list">
-                    <li><span>Exact pH balancing for sensitive machinery</span></li>
-                    <li><span>Advanced solvent replacement without losing cutting power</span></li>
-                    <li><span>Zero hazardous residue in ecosystem discharge</span></li>
-                    <li><span>Batch-to-batch consistency and reliability</span></li>
-                </ul>
-            </div>
+    <!-- Video Showcase -->
+    <section id="video">
+        <div class="section-header">
+            <div class="section-label">Our Journey</div>
+            <h2 class="section-title">See Siddhanta in Action</h2>
+            <p class="section-subtitle">Discover the innovation behind our products</p>
+        </div>
 
-            <div class="expertise-image">
-                <img src="wallpaper.png.png" alt="Siddhanta Logo">
+        <div class="video-showcase fade-in">
+            <div class="video-container">
+                <video width="100%" controls style="max-width: 500px; border-radius: 15px;">
+                    <source src="Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-content">
+                <h2>Premium Quality in Motion</h2>
+                <p>Experience the excellence of Siddhanta's industrial solutions through our comprehensive product showcase. From heavy-duty cleaning power to eco-friendly innovation, witness the science and sustainability that define our brand.</p>
+                <p>Our commitment to rigorous industrial science and environmental responsibility shines through every product we create. Watch as we demonstrate the cutting-edge technology and dedication that makes Siddhanta a trusted choice across industries.</p>
             </div>
         </div>
     </section>
