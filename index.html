@@ -117,42 +117,30 @@
         }
 
         .logo-display {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #1a1a1a;
-            letter-spacing: -2px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
             animation: logoGlow 4s ease-in-out infinite;
+        }
+
+        .logo-display img {
+            max-width: 200px;
+            height: auto;
+            animation: logoFloat 3s ease-in-out infinite;
         }
 
         @keyframes logoGlow {
             0%, 100% {
-                text-shadow: 0 0 0px rgba(0, 61, 130, 0);
-                transform: scale(1);
+                filter: drop-shadow(0 0 0px rgba(0, 61, 130, 0));
             }
             50% {
-                text-shadow: 0 0 30px rgba(0, 61, 130, 0.5);
-                transform: scale(1.02);
+                filter: drop-shadow(0 0 20px rgba(0, 61, 130, 0.4));
             }
         }
 
-        .logo-display span {
-            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623, #003D82);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 5s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .logo-tagline {
@@ -998,55 +986,21 @@
         .contact-item:nth-child(3) { animation-delay: 0.4s; }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 1.5rem;
-            flex-shrink: 0;
-            animation: spinIcon 6s linear infinite;
+            min-width: 30px;
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        @keyframes spinIcon {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .contact-details h4 {
-            font-weight: 700;
+        .contact-detail h4 {
+            font-size: 1.1rem;
             margin-bottom: 0.3rem;
-            font-size: 1rem;
+            font-weight: 700;
         }
 
-        .contact-details p {
-            opacity: 0.9;
+        .contact-detail p {
             font-size: 0.95rem;
+            opacity: 0.85;
             margin: 0;
-        }
-
-        .contact-details a {
-            color: inherit;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            opacity: 0.7;
-        }
-
-        @media (max-width: 968px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                padding: 2.5rem;
-            }
-            
-            .video-showcase {
-                flex-direction: column;
-                padding: 2.5rem;
-            }
         }
 
         /* ============================================
@@ -1056,41 +1010,38 @@
         footer {
             background: #1a1a1a;
             color: white;
-            padding: 2rem;
             text-align: center;
-            font-size: 0.9rem;
-            margin-top: 4rem;
+            padding: 2rem;
             position: relative;
             z-index: 2;
-            animation: fadeIn 1s ease-out;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
         }
 
         /* ============================================
-           SCROLL ANIMATIONS
-           ============================================ */
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ============================================
-           RESPONSIVE
+           RESPONSIVE DESIGN
            ============================================ */
 
         @media (max-width: 768px) {
-            .logo-display {
-                font-size: 2.5rem;
-            }
-
-            .logo-tagline {
-                font-size: 0.95rem;
+            .hero {
+                min-height: 80vh;
+                padding: 3rem 1.5rem;
             }
 
             .hero h1 {
@@ -1101,26 +1052,40 @@
                 font-size: 1rem;
             }
 
-            .section-title {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 3rem 1.5rem;
-            }
-
             .hero-buttons {
-                flex-direction: column;
                 gap: 1rem;
             }
 
             .btn-large {
-                width: 100%;
+                padding: 0.8rem 1.8rem;
+                font-size: 0.9rem;
             }
 
-            .floating-orb {
-                opacity: 0.03;
-                filter: blur(80px);
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .video-showcase {
+                flex-direction: column;
+                padding: 2rem 1.5rem;
+                gap: 2rem;
+            }
+
+            .video-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .logo-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .logo-display img {
+                max-width: 150px;
             }
         }
     </style>
@@ -1137,188 +1102,173 @@
     <!-- Logo Section at Top -->
     <section class="logo-section">
         <div class="logo-display">
-            S <span>IDDHANTA</span>
+            <img src="wallpaper.png.png" alt="Siddhanta Logo">
         </div>
         <p class="logo-tagline">Established Principles. Powerful Impact.</p>
     </section>
 
-    <!-- Navigation -->
+    <!-- Navigation Header -->
     <header>
-        <div class="navbar">
-            <nav class="nav-links">
-                <a href="#offerings">Products</a>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#offerings">Offerings</a>
                 <a href="#industries">Industries</a>
-                <a href="#video">Our Story</a>
-                <a href="#pillars">Principles</a>
-            </nav>
-            <div class="nav-buttons">
-                <a href="#contact" class="btn-outline">Sample</a>
-                <a href="#contact" class="btn-primary">Consult</a>
+                <a href="#vision">Vision</a>
+                <a href="#contact">Contact</a>
             </div>
-        </div>
+            <div class="nav-buttons">
+                <a href="#contact" class="btn-outline">Get Started</a>
+                <a href="#contact" class="btn-primary">Schedule Call</a>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="hero-badge">Advanced Industrial Solutions</div>
-            <h1>
-                Established Principles.<br>
-                <span class="gradient">Powerful Impact.</span>
-            </h1>
-            <p>Engineered solutions for industrial cleaning, eco-housekeeping, and water treatment with uncompromised cutting power without toxic footprints.</p>
+            <span class="hero-badge">✨ Leading Digital Transformation</span>
+            <h1>Empower Your Business with <span class="gradient">Established Principles</span></h1>
+            <p>Transform your vision into reality through our comprehensive suite of digital solutions. We combine strategic thinking with cutting-edge technology.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-large btn-primary-lg">Request a Product Sample</a>
-                <a href="#contact" class="btn-large btn-secondary-lg">Schedule a Consultation</a>
+                <a href="#contact" class="btn-large btn-primary-lg">Start Your Journey</a>
+                <a href="#offerings" class="btn-large btn-secondary-lg">Explore Solutions</a>
             </div>
         </div>
     </section>
 
-    <!-- Core Offerings -->
+    <!-- Offerings Section -->
     <section id="offerings">
         <div class="section-header">
-            <div class="section-label">What We Offer</div>
-            <h2 class="section-title">Core Product Solutions</h2>
-            <p class="section-subtitle">Premium formulations engineered for industrial excellence</p>
+            <span class="section-label">What We Offer</span>
+            <h2 class="section-title">Comprehensive Solutions</h2>
+            <p class="section-subtitle">From strategy and design to implementation and support, we deliver excellence at every step.</p>
         </div>
 
         <div class="offerings-grid">
-            <div class="offering-card fade-in">
-                <div class="offering-icon">🏭</div>
-                <h3>Heavy-Duty Cleaners</h3>
-                <p>Scientifically formulated to strip heavy grease, carbon, and industrial grime from machinery without degrading equipment.</p>
+            <div class="offering-card">
+                <div class="offering-icon">🎯</div>
+                <h3>Strategic Consulting</h3>
+                <p>Navigate complex challenges with data-driven insights and proven methodologies that drive measurable results.</p>
             </div>
-
-            <div class="offering-card fade-in">
-                <div class="offering-icon">🌿</div>
-                <h3>Bio-Degreasers</h3>
-                <p>Next-generation solvent replacements using advanced biological action to break down tough hydrocarbons safely.</p>
+            <div class="offering-card">
+                <div class="offering-icon">💻</div>
+                <h3>Digital Solutions</h3>
+                <p>Custom applications and platforms built with modern technologies to streamline your operations.</p>
             </div>
-
-            <div class="offering-card fade-in">
-                <div class="offering-icon">✨</div>
-                <h3>Eco-Housekeeping</h3>
-                <p>Premium, non-toxic cleaning agents for commercial spaces and retail consumers ensuring absolute safety.</p>
+            <div class="offering-card">
+                <div class="offering-icon">🚀</div>
+                <h3>Product Development</h3>
+                <p>From concept to launch, we help you build innovative products that capture market opportunities.</p>
             </div>
-
-            <div class="offering-card fade-in">
-                <div class="offering-icon">💧</div>
-                <h3>Water Treatment</h3>
-                <p>Technical chemical programs for industrial water systems optimization and strict environmental compliance.</p>
+            <div class="offering-card">
+                <div class="offering-icon">📊</div>
+                <h3>Analytics & Insights</h3>
+                <p>Transform raw data into actionable intelligence for smarter decision-making and growth.</p>
             </div>
         </div>
     </section>
 
-    <!-- Industries -->
+    <!-- Industries Section -->
     <section id="industries">
         <div class="section-header">
-            <div class="section-label">Market Reach</div>
-            <h2 class="section-title">Trusted Industries</h2>
-            <p class="section-subtitle">Serving leaders across multiple sectors</p>
+            <span class="section-label">Our Expertise</span>
+            <h2 class="section-title">Industries We Serve</h2>
+            <p class="section-subtitle">Deep domain knowledge across diverse sectors enables us to deliver tailored solutions.</p>
         </div>
 
         <div class="industries-grid">
-            <div class="industry-tag fade-in">🏗️ Manufacturing</div>
-            <div class="industry-tag fade-in">🚗 Automotive</div>
-            <div class="industry-tag fade-in">🏢 Corporate</div>
-            <div class="industry-tag fade-in">🏨 Hospitality</div>
-            <div class="industry-tag fade-in">🏥 Healthcare</div>
-            <div class="industry-tag fade-in">🛒 Retail</div>
+            <div class="industry-tag">Finance & Banking</div>
+            <div class="industry-tag">Healthcare</div>
+            <div class="industry-tag">E-commerce</div>
+            <div class="industry-tag">Technology</div>
+            <div class="industry-tag">Manufacturing</div>
+            <div class="industry-tag">Sustainability</div>
+            <div class="industry-tag">Logistics</div>
+            <div class="industry-tag">Education</div>
         </div>
     </section>
 
-    <!-- Video Showcase -->
-    <section id="video">
-        <div class="section-header">
-            <div class="section-label">Our Journey</div>
-            <h2 class="section-title">See Siddhanta in Action</h2>
-            <p class="section-subtitle">Discover the innovation behind our products</p>
-        </div>
-
-        <div class="video-showcase fade-in">
+    <!-- Video Showcase Section -->
+    <section>
+        <div class="video-showcase">
             <div class="video-container">
-                <video width="100%" controls style="max-width: 500px; border-radius: 15px;">
+                <video controls>
                     <source src="Video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
             <div class="video-content">
-                <h2>Premium Quality in Motion</h2>
-                <p>Experience the excellence of Siddhanta's industrial solutions through our comprehensive product showcase. From heavy-duty cleaning power to eco-friendly innovation, witness the science and sustainability that define our brand.</p>
-                <p>Our commitment to rigorous industrial science and environmental responsibility shines through every product we create. Watch as we demonstrate the cutting-edge technology and dedication that makes Siddhanta a trusted choice across industries.</p>
+                <h2>Watch Our Impact</h2>
+                <p>See how we've transformed businesses across industries through innovative solutions and strategic partnerships.</p>
+                <p>Our comprehensive approach ensures sustainable growth and long-term value creation for our clients.</p>
             </div>
         </div>
     </section>
 
-    <!-- 4-S Pillars -->
-    <section id="pillars">
+    <!-- Vision/Pillars Section -->
+    <section id="vision">
         <div class="section-header">
-            <div class="section-label">Core Values</div>
-            <h2 class="section-title">4-S Pillars of Principle</h2>
-            <p class="section-subtitle">The foundation of our commitment</p>
+            <span class="section-label">Our Foundation</span>
+            <h2 class="section-title">Core Pillars</h2>
+            <p class="section-subtitle">Built on principles that guide everything we do</p>
         </div>
 
         <div class="pillars-grid">
-            <div class="pillar-card fade-in">
+            <div class="pillar-card">
                 <div class="pillar-number">1</div>
-                <h3>SCIENCE</h3>
-                <p>Rigorous technical precision and advanced green chemistry. We engineer formulas that match or beat heavy traditional standards.</p>
+                <h3>Innovation</h3>
+                <p>Continuous advancement through research and creative problem-solving.</p>
             </div>
-
-            <div class="pillar-card fade-in">
+            <div class="pillar-card">
                 <div class="pillar-number">2</div>
-                <h3>SUSTAINABILITY</h3>
-                <p>Unbroken commitment to the natural ecosystem. Our methodologies actively preserve resources and eliminate toxic footprints.</p>
+                <h3>Integrity</h3>
+                <p>Unwavering commitment to ethical practices and transparency in all dealings.</p>
             </div>
-
-            <div class="pillar-card fade-in">
+            <div class="pillar-card">
                 <div class="pillar-number">3</div>
-                <h3>SAFETY</h3>
-                <p>Absolute protection for end-users, operators, and assets. Transparency is our baseline standard.</p>
+                <h3>Impact</h3>
+                <p>Meaningful results that create lasting value for our clients and communities.</p>
             </div>
-
-            <div class="pillar-card fade-in">
+            <div class="pillar-card">
                 <div class="pillar-number">4</div>
-                <h3>STABILITY</h3>
-                <p>Consistency you can rely on. Perfect batch-to-batch uniformity and long-term corporate partnerships.</p>
+                <h3>Integration</h3>
+                <p>Seamless collaboration across teams and technologies for cohesive solutions.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact CTA -->
+    <!-- Contact Section -->
     <section id="contact">
         <div class="contact-container">
             <div>
-                <h2>Let's Transform Your Standards</h2>
-                <p>Whether you need high-performance bio-degreasers for your workshop or complete water treatment solutions for your plant, we're ready to elevate your operations.</p>
+                <h2>Let's Transform Together</h2>
+                <p>Ready to elevate your business? Get in touch with our team to discuss how we can help achieve your goals.</p>
                 <div class="contact-buttons">
-                    <a href="mailto:itsyoursiddhant@gmail.com?subject=Product%20Sample%20Request" class="btn-contact primary">Request Sample</a>
-                    <a href="https://wa.me/918655843684" target="_blank" class="btn-contact secondary">Chat on WhatsApp</a>
+                    <a href="mailto:contact@siddhanta.com" class="btn-contact primary">Send Email</a>
+                    <a href="#" class="btn-contact secondary">Schedule Demo</a>
                 </div>
             </div>
 
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <div class="contact-details">
-                        <h4>Direct Contact</h4>
-                        <p><a href="tel:+918655843684">+91 86558 43684</a></p>
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-detail">
+                        <h4>Email</h4>
+                        <p>contact@siddhanta.com</p>
                     </div>
                 </div>
-
                 <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <div class="contact-details">
-                        <h4>Email Address</h4>
-                        <p><a href="mailto:itsyoursiddhant@gmail.com">itsyoursiddhant@gmail.com</a></p>
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-detail">
+                        <h4>Website</h4>
+                        <p>www.siddhanta.com</p>
                     </div>
                 </div>
-
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h4>Headquarters</h4>
-                        <p>Thane, Maharashtra, India</p>
+                    <div class="contact-detail">
+                        <h4>Location</h4>
+                        <p>Worldwide</p>
                     </div>
                 </div>
             </div>
@@ -1327,39 +1277,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Siddhanta. Built on Pillars of Principle. All Rights Reserved.</p>
+        <p>&copy; 2024 Siddhanta. All rights reserved. | Established Principles. Powerful Impact.</p>
     </footer>
-
-    <script>
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
