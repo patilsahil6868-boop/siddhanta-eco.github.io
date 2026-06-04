@@ -117,24 +117,42 @@
         }
 
         .logo-display {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: -2px;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 1rem;
             animation: logoGlow 4s ease-in-out infinite;
-        }
-
-        .logo-display img {
-            max-width: 300px;
-            height: auto;
         }
 
         @keyframes logoGlow {
             0%, 100% {
-                filter: drop-shadow(0 0 0px rgba(0, 61, 130, 0));
+                text-shadow: 0 0 0px rgba(0, 61, 130, 0);
+                transform: scale(1);
             }
             50% {
-                filter: drop-shadow(0 0 20px rgba(0, 61, 130, 0.3));
+                text-shadow: 0 0 30px rgba(0, 61, 130, 0.5);
+                transform: scale(1.02);
             }
+        }
+
+        .logo-display span {
+            background: linear-gradient(90deg, #003D82, #00D4AA, #F5A623, #003D82);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .logo-tagline {
@@ -1067,8 +1085,8 @@
            ============================================ */
 
         @media (max-width: 768px) {
-            .logo-display img {
-                max-width: 200px;
+            .logo-display {
+                font-size: 2.5rem;
             }
 
             .logo-tagline {
@@ -1119,7 +1137,7 @@
     <!-- Logo Section at Top -->
     <section class="logo-section">
         <div class="logo-display">
-            <img src="Logo.png.png" alt="Siddhanta Logo">
+            S <span>IDDHANTA</span>
         </div>
         <p class="logo-tagline">Established Principles. Powerful Impact.</p>
     </section>
